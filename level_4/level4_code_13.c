@@ -2,20 +2,20 @@
 
 int main()
 {
-    int n, temp, last, digits = 1, middle;
+    int n, a, last, digits = 1, middle;
     scanf("%d", &n);
 
-    temp = n;
+    a = n;
     last = n % 10;
 loop:
-    if (temp >= 10)
+    if (a >= 10)
     {
-        temp = temp / 10;
+        a = a / 10;
         digits = digits * 10;
         goto loop;
     }
-
+    
     middle = (n % digits) / 10;
-    n = last * digits + middle * 10 + temp;
+    n = last * digits + middle * 10 + a;
     printf("%d", n);
 }
