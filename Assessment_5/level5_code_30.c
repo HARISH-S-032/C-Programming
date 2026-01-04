@@ -3,15 +3,14 @@
 #include <stdio.h>
 int main()
 {
-    int a,b,i,j;
-    scanf("%d %d",&a,&b);
-    for(i=1;i<=a*b;i++)
+    int a, b, i, hcf;
+    scanf("%d %d", &a, &b);
+    for(i = 1; i <= a && i <= b; i++)
     {
-        if(i%a==0 && i%b==0)
+        if(a % i == 0 && b % i == 0)
         {
-            j=i;
-            break;
+       hcf = i;
         }
     }
-    printf("%d",j);
+    printf("%d", hcf);
 }
