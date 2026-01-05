@@ -1,29 +1,22 @@
+// Write a program print total number of single digit Prime numbers
+
 #include <stdio.h>
+
 int main()
 {
-    int a,c=0,b=3,prime=1;
-    while(b<=9)
+    int a = 2, b, c= 0;
+    while (a <= 9)
     {
-    a=2;
-    while(a<b)
-    {
-        if(b%a==0)
+        b = 2;
+        while (b < a)
         {
-           
+            if (a % b == 0)
+                break;
+            b++;
         }
-        if(b%a!=0)
-        {
-            prime=1;
+        if (b == a)
             c++;
-        }
         a++;
     }
-    if(prime==1)
-    {
-        c++;
-    }
-    b++;
-}
-c=c+1;
-printf("%d",c);
+    printf("%d", c);
 }
