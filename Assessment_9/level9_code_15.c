@@ -5,51 +5,50 @@ number's digits and put them in a new
 array and arrange the new array in
 ascending order and print same.*/
 
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
-    int a[50], b[50];
-    int i = 0, n, temp;
-    int num, sum, j;
-    while (1)
+    int a[1000],s[1000];
+    int b=0,count=0,c,d=0,e;
+    for(int i=0;i<1000;i++)
     {
-        scanf("%d", &n);
-        if (n == 0)
+        scanf("%d",&a[i]);
+        if(a[i]==0)
+        {
             break;
-
-        a[i] = n;
-        i++;
-    }
-    for (j = 0; j < i; j++)
-    {
-        num = a[j];
-        sum = 0;
-
-        while (num > 0)
-        {
-            sum = sum + (num % 10);
-            num = num / 10;
         }
-
-        b[j] = sum;
-    }
-    for (j = 0; j < i - 1; j++)
-    {
-        for (n = j + 1; n < i; n++)
+        else
         {
-            if (b[j] > b[n])
+            b=b+a[i];
+            count++;
+        }
+    }
+    for(int i=0;i<count;i++)
+    {
+        e=a[i];
+        d=0;
+        while(e!=0)
+        {
+        c=e%10;
+        d=d+c;
+        e=e/10;
+        }
+        s[i]=d;
+    }
+    for(int i=0;i<count;i++)
+    {
+        for(int j=i+1;j<count;j++)
+        {
+            if(s[i]>s[j])
             {
-                temp = b[j];
-                b[j] = b[n];
-                b[n] = temp;
+                int temp = s[i];
+                s[i] = s[j];
+                s[j] = temp; 
             }
         }
     }
-    for (j = 0; j < i; j++)
+    for(int i=0;i<count;i++)
     {
-        printf("%d ", b[j]);
+    printf("%d ",s[i]);
     }
-
-    return 0;
 }
