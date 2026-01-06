@@ -3,19 +3,19 @@
 #include <stdio.h>
 int main()
 {
-    int i,b,c=0;
+    int i,c=0;
     int x[5],y[c];
     for(i=0;i<5;i++)
     {
         scanf("%d",&x[i]);
         if(x[i]%2==0)
         {
-            y[b]=x[i];
+            y[c]=x[i];
             
-            b++;
+            c++;
         }
     }
-    for(i=0;i<b;i++)
+    for(i=0;i<c;i++)
     {
         printf("%d ",y[i]);
     }
